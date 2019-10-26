@@ -1,0 +1,103 @@
+@import './normalize.scss';
+@import './settings/fonts';
+@import './settings/colors';
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-main;
+    &:after {
+        content: "";
+        background: url('../assets/bg.png');
+        opacity: 0.5;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;   
+      }
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+//TEAM
+.team-container {
+    width: 1060px;
+    height: 100vh;
+    h1 {
+        font-weight: 600;
+        font-size: 60px;
+        color: $color-title;
+        text-align: center;
+    }
+}
+
+//Team member
+
+.team-member .container {
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.team-member {
+    .team-member-img img {
+        height: 180px;
+        width: 180px;
+        border-radius: 50%;
+    }
+
+    .team-member-img {
+        &::before {
+            content: ""; 
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background-color: $color-description;
+            opacity: .7;
+        } 
+    }
+
+    // .team-member-mail {
+    //     height: 40px;
+    //     width: 40px;
+    //     background-color: $color-title;
+    //     border-radius: 50%;
+    //     z-index: 1;
+    //     position: absolute;
+    //     margin: 5px;
+    //     left: 240px;
+    //     top: 150px;
+    // }
+    
+    .team-member-name{
+        font-size: 20px;
+        color: $color-title;
+        font-weight: 400;
+        margin: 25px 0;
+    }
+    .team-member-position{
+        font-size: 14px;
+        color: $color-description;
+        font-weight: 300;
+        margin: 0 0 15px;
+    }
+    .team-member-localization{
+        font-size: 14px;
+        color: $color-basic;
+        font-weight: 300;
+        margin: 0;
+    }
+}
