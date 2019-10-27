@@ -5,7 +5,7 @@ import { TeamMember } from './TeamMember';
 export class Team extends Component {
     render() {
         return (
-            <div className="team-container">
+            <div className="main-page">
                 <h1>
                     Meet our team
                 </h1>

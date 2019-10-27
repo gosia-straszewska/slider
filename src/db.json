@@ -1,0 +1,64 @@
+{
+    "people": [
+        {
+            "name": "Basia Sołtyńska",
+            "position": "Founder",
+            "localization": "Warsaw",
+            "img": "https://source.unsplash.com/random/200x200"
+        },
+        {
+            "name": "Włas Chorowiec",
+            "position": "Founder",
+            "localization": "Warsaw",
+            "img": "https://source.unsplash.com/random/200x200"
+        },
+        {
+            "name": "Edyta Leśniewska",
+            "position": "Head of Human Resources",
+            "localization": "Warsaw",
+            "img": "https://source.unsplash.com/random/200x200"
+        },
+        {
+            "name": "Joanna Pawluk",
+            "position": "Chief Growth Officer (CGO)",
+            "localization": "London",
+            "img": "https://source.unsplash.com/random/200x200"
+        },
+        {
+            "name": "David Saunders",
+            "position": "Business Development",
+            "localization": "London",
+            "img": "https://source.unsplash.com/random/200x200"
+        },
+        {
+            "name": "Adam Eldridge",
+            "position": "Busines Development Director US",
+            "localization": "Los Angeles",
+            "img": "https://source.unsplash.com/random/200x200"
+        },
+        {
+            "name": "Maha Mahda",
+            "position": "Chef Business Development Officer (CBDO)",
+            "localization": "Warsaw",
+            "img": "https://source.unsplash.com/random/200x200"
+        },
+        {
+            "name": "Elzbieta Kamińska",
+            "position": "International Client Service Manager",
+            "localization": "Warsaw",
+            "img": "https://source.unsplash.com/random/200x200"
+        },
+        {
+            "name": "Karolina Makuch",
+            "position": "Creation Manager",
+            "localization": "Warsaw",
+            "img": "https://source.unsplash.com/random/200x200"
+        },
+        {
+            "name": "Kamil Bolek",
+            "position": "Head of Communiction",
+            "localization": "Warsaw",
+            "img": "https://source.unsplash.com/random/200x200"
+        }
+    ]
+}

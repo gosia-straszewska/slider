@@ -9,17 +9,20 @@
 
 body {
     font-family: $font-main;
+
     &:after {
         content: "";
         background: url('../assets/bg.png');
+        height: 100%;
+        width: 100%;
         opacity: 0.5;
         top: 0;
         left: 0;
         bottom: 0;
         right: 0;
         position: absolute;
-        z-index: -1;   
-      }
+        z-index: -1;
+    }
 }
 
 .main {
@@ -30,15 +33,22 @@ body {
 }
 
 //TEAM
-.team-container {
+.main-page {
     width: 1060px;
-    height: 100vh;
+
     h1 {
         font-weight: 600;
         font-size: 60px;
         color: $color-title;
         text-align: center;
     }
+}
+
+.team-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 //Team member
@@ -49,55 +59,64 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
+
 }
+
 .team-member {
     .team-member-img img {
         height: 180px;
         width: 180px;
         border-radius: 50%;
+        // background-color:$color-description ;
+        opacity: 0.3;
     }
 
     .team-member-img {
+        background-color: $color-description;
+        border-radius: 50%;
+        height: 180px;
+        width: 180px;
+        position: relative;
         &::before {
-            content: ""; 
+            content: "\f0e0";
+            font-family: FontAwesome;
+            font-size: 17px;
+            color: white;
             position: absolute;
-            width: 180px;
-            height: 180px;
+            text-align: justify;
+            background-color: $color-title;
             border-radius: 50%;
-            background-color: $color-description;
-            opacity: .7;
-        } 
+            position: absolute;
+            padding: 10px 12px;
+            margin: 5px;
+            z-index: 1;
+            display: flex;
+            justify-content: right;
+            top: 0px;
+            left: 130px;
+        }
     }
 
-    // .team-member-mail {
-    //     height: 40px;
-    //     width: 40px;
-    //     background-color: $color-title;
-    //     border-radius: 50%;
-    //     z-index: 1;
-    //     position: absolute;
-    //     margin: 5px;
-    //     left: 240px;
-    //     top: 150px;
-    // }
-    
-    .team-member-name{
+    .team-member-name {
         font-size: 20px;
         color: $color-title;
         font-weight: 400;
         margin: 25px 0;
     }
-    .team-member-position{
+
+    .team-member-position {
         font-size: 14px;
         color: $color-description;
         font-weight: 300;
         margin: 0 0 15px;
+        text-align: center;
     }
-    .team-member-localization{
+
+    .team-member-localization {
         font-size: 14px;
         color: $color-basic;
         font-weight: 300;
-        margin: 0;
+        margin: 0 30px;
+        padding-bottom: 50px;
     }
 }
