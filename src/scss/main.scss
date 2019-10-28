@@ -9,13 +9,12 @@
 
 body {
     font-family: $font-main;
-
     &:after {
         content: "";
         background: url('../assets/bg.png');
         height: 100%;
         width: 100%;
-        opacity: 0.5;
+        opacity: 0.2;
         top: 0;
         left: 0;
         bottom: 0;
@@ -35,12 +34,12 @@ body {
 //TEAM
 .main-page {
     width: 1060px;
-
     h1 {
         font-weight: 600;
-        font-size: 60px;
+        font-size: 45px;
         color: $color-title;
         text-align: center;
+        margin-bottom: 60px;
     }
 }
 
@@ -63,9 +62,10 @@ body {
 }
 
 .team-member {
+    cursor: pointer;
     .team-member-img img {
-        height: 180px;
-        width: 180px;
+        height: 120px;
+        width: 120px;
         border-radius: 50%;
         // background-color:$color-description ;
         opacity: 0.3;
@@ -74,49 +74,140 @@ body {
     .team-member-img {
         background-color: $color-description;
         border-radius: 50%;
-        height: 180px;
-        width: 180px;
+        height: 120px;
+        width: 120px;
         position: relative;
         &::before {
             content: "\f0e0";
             font-family: FontAwesome;
-            font-size: 17px;
+            font-size: 15px;
             color: white;
-            position: absolute;
             text-align: justify;
             background-color: $color-title;
             border-radius: 50%;
             position: absolute;
-            padding: 10px 12px;
-            margin: 5px;
+            padding: 7px 8px;
+            margin: 4px;
             z-index: 1;
             display: flex;
             justify-content: right;
             top: 0px;
-            left: 130px;
+            left: 82px;
         }
     }
 
     .team-member-name {
-        font-size: 20px;
+        font-size: 17px;
         color: $color-title;
         font-weight: 400;
-        margin: 25px 0;
+        margin: 15px 0;
     }
 
     .team-member-position {
-        font-size: 14px;
+        font-size: 12px;
         color: $color-description;
         font-weight: 300;
-        margin: 0 0 15px;
+        margin: 0 0 8px;
         text-align: center;
     }
 
     .team-member-localization {
-        font-size: 14px;
+        font-size: 12px;
         color: $color-basic;
         font-weight: 300;
-        margin: 0 30px;
-        padding-bottom: 50px;
+        margin: 0 25px;
+        padding-bottom: 30px;
+    }
+}
+
+//SLIDER
+.slider-wrapper {
+    position: relative;
+    height: 70vh;
+    overflow: hidden;
+    background-image: url("../assets/background-slider.jpg");
+    background-size: cover;
+    
+    &::before{
+        content: "";
+        background-color: $color-description;
+        opacity: 0.7;
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+.slide {
+    height: 70vh;
+}
+.cancel{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+}
+.button {
+    height: 40px;
+    width: 40px;
+    margin: 15px;
+    background-image: url('../assets/cancel.png');
+    background-size: cover;
+    cursor: pointer;
+}
+
+.previousButton, .nextButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: url('../assets/arrow-point-to-right.png') no-repeat center center / 45px;
+    width: 62px;
+    height: 62px;
+    text-indent: -9999px;
+    cursor: pointer;
+}
+
+.previousButton {
+    left: 0;
+    -webkit-transform: rotate(180deg) translateY(calc(50% + 0px));
+    transform: rotate(180deg) translateY(calc(50% + 0px));
+}
+.nextButton {
+        right: 0;
+      }
+.slider-content{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.inner {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border: 4px rgba(255,255,255, 0.3) dashed ;
+    padding: 35px;
+    margin-bottom: 100px;
+    .position{
+        font-weight: 300;
+        color: white;
+        font-size: 32px;
+        filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.55));
+        margin: 0 0 15px;
+    }
+    .name{
+        font-weight: 600;
+        color: white;
+        font-size: 70px;
+        filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.55));
+        margin:0;
     }
 }

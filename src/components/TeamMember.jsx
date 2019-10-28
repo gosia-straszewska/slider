@@ -9,12 +9,14 @@ export class TeamMember extends Component {
         super(props);
         this.state = {
             items: [],
-            currentID: null,
+            currentID: "0",
+            on: false,
         }
-        this.handlerClick =this.handlerClick.bind(this);
+        this.handlerClick = this.handlerClick.bind(this);
+        this.handlerCancel = this.handlerCancel.bind(this);
     };
 
-    loadMembersFromServer (){
+    loadMembersFromServer() {
         fetch("http://localhost:3000/people")
             .then(res => res.json())
             .then(json => {
@@ -26,50 +28,60 @@ export class TeamMember extends Component {
 
     componentDidMount() {
         this.loadMembersFromServer();
-        
+
     };
 
-    handlerClick(e){
-        // const id = e.currentTarget.dataset.id;
+    handlerClick(e) {
         console.log(e.currentTarget.dataset.id);
         this.setState({
-            currentID: e.currentTarget.dataset.id
+            currentID: e.currentTarget.dataset.id,
+            on: true,
         });
-
-        
-        
-        
     }
-    render() {
-        console.log(this.state.items);
-        console.log(this.state.currentID, this.state.items[this.state.currentID-1]);
 
-        const {items} = this.state;
+    handlerCancel() {
+        this.setState({
+            currentID: 0,
+            on: false,
+        });
+    }
+
+    render() {
+        console.log(this.state.items, typeof (this.state.currentID), this.state.items[this.state.currentID - 1]);
+
+        const { items, currentID, on } = this.state;
+        const slideNumb = Number(currentID)
+        console.log(slideNumb, this.state.on)
 
         return (
             <div>
-            <div className="team-container">
-                {items.map(item =>( 
-                <div className='team-member' key={item.id} data-id={item.id} onClick={this.handlerClick} >
-                    <div className='container'>
-                        <div className='team-member-img mail'>
-                            <img src={item.img} alt="" />
+                <div className="team-container">
+                    {items.map(item => (
+                        <div className='team-member' key={item.id} data-id={item.id} onClick={this.handlerClick} >
+                            <div className='container'>
+                                <div className='team-member-img mail'>
+                                    <img src={item.img} alt="" />
+                                </div>
+                                <h2 className='team-member-name'>{item.name}</h2>
+                                <h3 className='team-member-position'>{item.position}</h3>
+                                <p className='team-member-localization'>{item.localization}</p>
+                            </div>
                         </div>
-                        <h2 className='team-member-name'>{item.name}</h2>
-                        <h3 className='team-member-position'>{item.position}</h3>
-                        <p className='team-member-localization'>{item.localization}</p>
-                    </div>
+                    ))}
                 </div>
-                ))}
-            </div>
-                <Slider >
-                    {items.map((item, index) => <div key={index}>
-                        <div>
-                            <h2>{item.position}</h2>
-                            <p>{item.name}</p>
-                        </div>
-                    </div>)}
-                </Slider>
+                {on ?
+                //pobieram id slidu przez klikniecie w wizytówkę i ustawiam id w SlideIndex jako pierwszy slide w karuzeli
+                    <Slider slideIndex={slideNumb} className="slider-wrapper" onSlideChange={event => console.log(event.slideIndex)}>
+                        {items.map((item, index) => <div key={index} className="slider-content">
+                            <div className="cancel">
+                                <div className="button" onClick={this.handlerCancel}></div>
+                            </div>
+                            <div className="inner">
+                                <p className="position">{item.position}</p>
+                                <p className="name">{item.name}</p>
+                            </div>
+                        </div>)}
+                    </Slider> : null}
             </div>
         )
     }
