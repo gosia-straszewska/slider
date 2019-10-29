@@ -68,12 +68,14 @@ body {
 
 .team-member {
     cursor: pointer;
+    &:hover{
+        opacity: 0.6;
+    }
 
     .team-member-img img {
         height: 120px;
         width: 120px;
         border-radius: 50%;
-        // background-color:$color-description ;
         opacity: 0.3;
     }
 
