@@ -50,7 +50,7 @@ export class TeamMember extends Component {
         console.log(this.state.items, typeof (this.state.currentID), this.state.items[this.state.currentID - 1]);
 
         const { items, currentID, on } = this.state;
-        const slideNumb = Number(currentID)
+        const slideNumb = Number(currentID-1)
         console.log(slideNumb, this.state.on)
 
         return (
