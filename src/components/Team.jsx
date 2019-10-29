@@ -9,9 +9,7 @@ export class Team extends Component {
                 <h1>
                     Meet our team
                 </h1>
-                <div>
-                    <TeamMember/>
-                </div>
+                <TeamMember/>
             </div>
         )
     }

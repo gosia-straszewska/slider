@@ -54,7 +54,7 @@ export class TeamMember extends Component {
         console.log(slideNumb, this.state.on)
 
         return (
-            <div>
+            <div className="team-body">
                 <div className="team-container">
                     {items.map(item => (
                         <div className='team-member' key={item.id} data-id={item.id} onClick={this.handlerClick} >
