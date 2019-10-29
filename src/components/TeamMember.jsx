@@ -9,7 +9,7 @@ export class TeamMember extends Component {
         super(props);
         this.state = {
             items: [],
-            currentID: "0",
+            currentID: "0", // string poniewaz wartosc currentID pobierana przez metode handlerClick jest stringiem - co sprawdzam pozniej printujac ten state
             on: false,
         }
         this.handlerClick = this.handlerClick.bind(this);
@@ -50,7 +50,7 @@ export class TeamMember extends Component {
         console.log(this.state.items, typeof (this.state.currentID), this.state.items[this.state.currentID - 1]);
 
         const { items, currentID, on } = this.state;
-        const slideNumb = Number(currentID-1)
+        const slideNumb = Number(currentID - 1)
         console.log(slideNumb, this.state.on)
 
         return (
@@ -70,7 +70,8 @@ export class TeamMember extends Component {
                     ))}
                 </div>
                 {on ?
-                //pobieram id slidu przez klikniecie w wizytówkę i ustawiam id w SlideIndex jako pierwszy slide w karuzeli
+                    //pobieram id slide'u przez klikniecie w wizytówkę i ustawiam id w SlideIndex jako pierwszy slide w karuzeli
+                    //skorzystałam z gotowego komponentu: https://www.npmjs.com/package/react-animated-slider
                     <Slider slideIndex={slideNumb} className="slider-wrapper" onSlideChange={event => console.log(event.slideIndex)}>
                         {items.map((item, index) => <div key={index} className="slider-content">
                             <div className="cancel">
